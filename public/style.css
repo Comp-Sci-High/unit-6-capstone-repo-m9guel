@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* Center login */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Auth */
+.auth-card {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 16px;
+  width: 320px;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+}
+
+/* Layout */
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background: #020617;
+  padding: 20px;
+}
+
+.sidebar a {
+  display: block;
+  margin: 10px 0;
+  color: #94a3b8;
+}
+
+.sidebar .active {
+  color: white;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Priority */
+.priority-card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* Progress */
+.progress-bar {
+  background: #334155;
+  height: 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.progress-bar div {
+  background: #22c55e;
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* Status colors */
+.urgent { color: #ef4444; }
+.soon { color: #facc15; }
+.done { color: #22c55e; }
+
+/* Table */
+table {
+  width: 100%;
+}
+
+td, th {
+  padding: 10px;
+}

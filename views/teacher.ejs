@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teacher Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <h2>CSH</h2>
+    <nav>
+      <a class="active">Dashboard</a>
+      <a href="#create">Assignments</a>
+      <a href="#students">Students</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="header">
+      <div>
+        <h2>Class Overview</h2>
+        <p>Manage assignments and monitor student progress.</p>
+      </div>
+      <button onclick="window.location.href='/logout'">Logout</button>
+    </header>
+
+    <section class="card" id="create">
+      <h3>Create Assignment</h3>
+      <form action="/teacher/assignments" method="POST">
+        <input type="text" name="title" placeholder="Title" required>
+        <input type="date" name="due" required>
+        <input type="text" name="subject" placeholder="Subject" required>
+        <select name="studentEmail" required>
+          <option value="">Assign to student</option>
+          <% students.forEach(function(student) { %>
+            <option value="<%= student.email %>"><%= student.name %> (<%= student.email %>)</option>
+          <% }) %>
+        </select>
+        <button type="submit">Create</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h3>Student Progress</h3>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Progress</th>
+          <th>Status</th>
+        </tr>
+        <% studentSummaries.forEach(function(student) { %>
+          <tr>
+            <td><%= student.name %></td>
+            <td><%= student.progress %>%</td>
+            <td><%= student.status %></td>
+          </tr>
+        <% }) %>
+      </table>
+    </section>
+
+    <section class="card" id="students">
+      <h3>All Assignments</h3>
+      <table>
+        <tr>
+          <th>Title</th>
+          <th>Subject</th>
+          <th>Due</th>
+          <th>Student</th>
+          <th>Status</th>
+        </tr>
+        <% assignments.forEach(function(assignment) { %>
+          <tr>
+            <td><%= assignment.title %></td>
+            <td><%= assignment.subject %></td>
+            <td><%= assignment.due %></td>
+            <td><%= assignment.studentEmail %></td>
+            <td><%= assignment.status %></td>
+          </tr>
+        <% }) %>
+      </table>
+    </section>
+  </main>
+</div>
+</body>
+</html>

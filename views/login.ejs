@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSH Tracker Login</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="center">
+  <div class="auth-card">
+    <h1>CSH Tracker</h1>
+    <p>Manage mastery assignments, progress, and deadlines.</p>
+
+    <% if (error) { %>
+      <p class="error-message"><%= error %></p>
+    <% } %>
+
+    <form action="/login" method="POST">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+
+      <div class="role-select">
+        <label><input type="radio" name="role" value="student" required> Student</label>
+        <label><input type="radio" name="role" value="teacher"> Teacher</label>
+      </div>
+
+      <button type="submit">Continue</button>
+    </form>
+
+    <p class="small-text">Use student@csh.edu / student or teacher@csh.edu / teacher to sign in.</p>
+  </div>
+</body>
+</html>

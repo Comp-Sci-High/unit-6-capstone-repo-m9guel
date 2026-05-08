@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "ejs": "^5.0.2",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "mongoose": "^9.6.1",
+    "uuid": "^14.0.0"
+  },
+  "name": "unit-6-capstone-repo-m9guel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Comp-Sci-High/unit-6-capstone-repo-m9guel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Comp-Sci-High/unit-6-capstone-repo-m9guel/issues"
+  },
+  "homepage": "https://github.com/Comp-Sci-High/unit-6-capstone-repo-m9guel#readme"
+}
