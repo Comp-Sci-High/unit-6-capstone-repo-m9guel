@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — CSH Tracker</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="dash-body">
+
+  <nav class="topnav">
+    <div class="topnav-brand">📚 CSH Tracker</div>
+    <div class="topnav-right">
+      <span class="topnav-name"><%= user.name %></span>
+      <a href="/logout" class="btn-ghost">Sign Out</a>
+    </div>
+  </nav>
+
+  <main class="dash-main">
+    <div class="dash-header">
+      <h2>Welcome back, <%= user.name.split(" ")[0] %> 👋</h2>
+      <p>Here's your dashboard. More features coming soon.</p>
+    </div>
+
+    <div class="dash-cards">
+      <div class="dash-card">
+        <div class="dash-card-icon">📧</div>
+        <div>
+          <p class="dash-card-label">Email</p>
+          <p class="dash-card-value"><%= user.email %></p>
+        </div>
+      </div>
+      <div class="dash-card">
+        <div class="dash-card-icon">📅</div>
+        <div>
+          <p class="dash-card-label">Member since</p>
+          <p class="dash-card-value"><%= new Date(user.createdAt).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }) %></p>
+        </div>
+      </div>
+      <div class="dash-card">
+        <div class="dash-card-icon">✅</div>
+        <div>
+          <p class="dash-card-label">Account status</p>
+          <p class="dash-card-value" style="color:#22c55e;">Active</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

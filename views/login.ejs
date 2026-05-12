@@ -2,31 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CSH Tracker Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In — CSH Tracker</title>
   <link rel="stylesheet" href="/style.css">
 </head>
-<body class="center">
-  <div class="auth-card">
-    <h1>CSH Tracker</h1>
-    <p>Manage mastery assignments, progress, and deadlines.</p>
+<body class="auth-body">
+  <div class="auth-wrapper">
 
-    <% if (error) { %>
-      <p class="error-message"><%= error %></p>
-    <% } %>
+    <div class="auth-brand">
+      <div class="brand-icon">📚</div>
+      <h1>CSH Tracker</h1>
+    </div>
 
-    <form action="/login" method="POST">
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="password" name="password" placeholder="Password" required>
+    <div class="auth-card">
+      <h2>Welcome back</h2>
+      <p class="auth-subtitle">Sign in to your account</p>
 
-      <div class="role-select">
-        <label><input type="radio" name="role" value="student" required> Student</label>
-        <label><input type="radio" name="role" value="teacher"> Teacher</label>
-      </div>
+      <% if (error) { %>
+        <div class="alert alert-error">
+          <span>⚠</span> <%= error %>
+        </div>
+      <% } %>
 
-      <button type="submit">Continue</button>
-    </form>
+      <form action="/login" method="POST" novalidate>
+        <div class="field">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value="<%= email %>"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          >
+        </div>
 
-    <p class="small-text">Use student@csh.edu / student or teacher@csh.edu / teacher to sign in.</p>
+        <div class="field">
+          <label for="password">
+            Password
+            <a href="/forgot-password" class="label-link">Forgot password?</a>
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="••••••••"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+
+        <button type="submit" class="btn-primary">Sign In</button>
+      </form>
+
+      <p class="auth-switch">
+        Don't have an account? <a href="/signup">Create one</a>
+      </p>
+    </div>
+
   </div>
 </body>
 </html>
