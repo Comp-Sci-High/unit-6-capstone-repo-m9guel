@@ -293,4 +293,4 @@ app.get("/login", redirectIfLoggedIn, (req, res) => {
 /* ─── START ──────────────────────────────────────────────── */
 app.listen(PORT, () => {
   console.log(`Running on http://localhost:${PORT}`);
-});
+})
