@@ -286,8 +286,16 @@ app.get("/dashboard", requireLogin, (req, res) => {
 });
 
 /* ── LOGOUT ── */
-app.get("/login", redirectIfLoggedIn, (req, res) => {
-  res.render("login", { error: null, email: "" });
+app.get("/logout", requireLogin, (req, res) => {
+  req.session.destroy(err => {
+    if (err) {
+      console.error("Logout error:", err);
+      return res.redirect("/dashboard");
+    }
+
+    res.clearCookie("connect.sid");
+    res.redirect("/login");
+  });
 });
 
 /* ─── START ──────────────────────────────────────────────── */
